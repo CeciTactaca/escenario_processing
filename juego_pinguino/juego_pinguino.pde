@@ -1,14 +1,29 @@
 Pinguino ave;
 Hielo obstaculo;
-Pescado comida;
+PImage fondo;
 
 public void setup(){
-  size(400,400);
+  size(915,452);
+  fondo = loadImage("fondo.png");
+  image (fondo,0,0);
   ave = new Pinguino();
   obstaculo = new Hielo();
-  comida = new Pescado();
+  obstaculo = new Hielo(new PVector(0,150),new PVector(0,5));
+  ave.setPosicion(new PVector(width/2,370));
+  ave.setVelocidad(new PVector(10,10));
 }
 
 public void draw(){
-  nave.dibujar();
+    ave.dibujar();
+    obstaculo.dibujar();
+    obstaculo.mover();
 }
+
+ //public void mousePressed(){
+  //if (mousePressed){
+      //if (mouseButton==LEFT){
+      //  ave.posicion = 
+     // }else if (mouseButton==RIGHT){
+ //   }
+ //   }
+//}
